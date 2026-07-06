@@ -1,4 +1,6 @@
-import { FaBagShopping } from "react-icons/fa6";
+import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import { FaBagShopping, FaBars } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 
 const navItems = [
@@ -8,12 +10,12 @@ const navItems = [
     { label: "Contact", path: "/contact" },
 ];
 
-const NavItems = () => {
+const NavItems = ({ toggleMenu }) => {
     return (
         <ul className='flex flex-col md:flex-row items-center md:space-x-8 gap-8'>
             {navItems.map((item, index) => (
-                <li key={index+1}>
-                    <NavLink to={item.path} className={({ isActive }) => isActive ? "text-primary font-bold" : "hover:text-primary"}>
+                <li key={index+1} onClick={toggleMenu}>
+                    <NavLink to={item.path} className={({ isActive }) => isActive ? "text-primary font-bold" : "hover:text-primary"} >
                         {item.label}
                     </NavLink>
                 </li>
@@ -23,6 +25,13 @@ const NavItems = () => {
 };
 
 const Navbar = () => {
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(prevState => !prevState);
+    }
+
     return (
         // <header className="bg-white shadow-md py-4 px-8">
         <header>
@@ -31,10 +40,27 @@ const Navbar = () => {
                 <Link to="/">
                     <h1 className="font-bold">Panto</h1>
                 </Link>
-                {/* manu items  */}
+
+                {/* mobile menu items */}
+                <div onClick={toggleMenu} className="md:hidden cursor-pointer text-xl hover:text-primary" >
+                    {
+                        isMenuOpen ? null : <FaBars />
+                    }
+                </div>
+
+                {/* desktop menu items */}
                 <div className="hidden md:flex items-center justify-center">
                     <NavItems />
                 </div>
+
+                {/* mobile menu items */}
+                <div className={`fixed top-0 left-0 w-full h-screen bg-black opacity-80 flex flex-col items-center justify-center space-y-8 text-white transition-transform transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} md:hidden`}>
+                    <div className="absolute top-4 right-4 text-xl cursor-pointer" onClick={toggleMenu}>
+                        <FaTimes />
+                    </div>
+                    <NavItems toggleMenu={toggleMenu} />
+                </div>
+
                 {/* cart */}
                 <div className="hidden md:block cursor-pointer relative">
                     <FaBagShopping />
