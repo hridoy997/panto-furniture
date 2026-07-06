@@ -1,10 +1,14 @@
+import { Link, Outlet } from 'react-router-dom';
 import './App.css'
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
 
   return (
     <>
-      <h2 className="text-5xl font-primary text-red-500 text-center font-bold p-20">Welcome to Vite + React</h2>
+      <Navbar />
+      <Outlet />
+      <footer>footer</footer>
     </>
   )
 }
