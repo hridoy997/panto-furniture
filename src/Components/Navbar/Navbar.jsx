@@ -34,7 +34,7 @@ const Navbar = () => {
 
     return (
         // <header className="bg-white shadow-md py-4 px-8">
-        <header>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out text-white`}>
             <nav className="max-w-screen-2xl container mx-auto flex items-center justify-between py-6 px-4">
                 {/* logo */}
                 <Link to="/">
