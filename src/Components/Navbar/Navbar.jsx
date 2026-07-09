@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaBagShopping, FaBars } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
@@ -27,14 +27,30 @@ const NavItems = ({ toggleMenu }) => {
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(prevState => !prevState);
     }
 
+    // scroll apply bg collor change
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [])
+
     return (
         // <header className="bg-white shadow-md py-4 px-8">
-        <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out text-white`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out ${isScrolled ? "bg-white shadow-md" : "bg-transparent text-white"}`}>
             <nav className="section-container flex items-center justify-between">
                 {/* logo */}
                 <Link to="/">
