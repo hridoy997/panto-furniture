@@ -1,10 +1,16 @@
-import React from 'react'
+import Banner from '../../assets/banner.png'
+import Products from './Products';
+
 
 const Shop = () => {
     return (
-        <div>
-            shop
-        </div>
+        <section className='min-h-screen'>
+            {/* banner */}
+            <div className='w-full h-[400px] bg-cover bg-center flex items-center justify-center text-white' style={{ backgroundImage: `url(${Banner})` }} >
+                <h1 className='text-4xl font-bold'>Shop Our Products</h1>
+            </div>
+            <Products headLine="What's Your Choice" />
+        </section>
     )
 }
 

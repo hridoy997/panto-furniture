@@ -1,3 +1,4 @@
+import Products from '../Shop/Products';
 import Hero from './Hero';
 import WhyChoosingUs from './WhyChoosingUs';
 
@@ -6,6 +7,7 @@ const Home = () => {
         <>
             <Hero />
             <WhyChoosingUs />
+            <Products headLine="Best Selling Product" />
         </>
     )
 }
