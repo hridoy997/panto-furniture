@@ -1,5 +1,6 @@
 import { FaSearch } from 'react-icons/fa';
 import Banner from '../../assets/banner.png'
+import TooltipButton from '../../Components/TooltipButton/TooltipButton';
 
 const Hero = () => {
     return (
@@ -18,16 +19,17 @@ const Hero = () => {
             {/* bottom blur effect */}
             <div className="absolute inset-x-0 bottom-0 h-3/4 -mb-2 bg-gradient-to-t from-white via-transparent to-transparent blur-sm" />
             {/* hover button for displaying tooltip box  */}
-            <div className="absolute bottom-40 left-24 group">
-                <button className="relative p-4 bg-white/25 border border-white rounded-full">
-                    <div className="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 space-x-1 p-2 rounded-lg bg-white/25 shadow-md group-hover:flex">
-                        <div className="size-6 bg-red-700 border border-white rounded-full"></div>
-                        <div className="size-6 bg-green-700 border border-white rounded-full"></div>
-                        <div className="size-6 bg-blue-700 border border-white rounded-full"></div>
-                        {/* tooltip arrow */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white/35"></div>
-                    </div>
-                </button>
+            <div className="hidden lg:block absolute bottom-40 left-24">
+                <TooltipButton position="bottom" colors={['bg-red-700', 'bg-green-700', 'bg-blue-700']} />
+            </div>
+            <div className="hidden lg:block absolute bottom-52 left-96">
+                <TooltipButton position="bottom" colors={['bg-red-700', 'bg-green-700', 'bg-blue-700']} />
+            </div>
+            <div className="hidden lg:block absolute bottom-24 right-[820px]">
+                <TooltipButton position="bottom" colors={['bg-red-700', 'bg-green-700', 'bg-blue-700']} />
+            </div>
+            <div className="hidden lg:block absolute bottom-12 right-14">
+                <TooltipButton position="bottom" colors={['bg-red-700', 'bg-green-700', 'bg-blue-700']} />
             </div>
         </section>
     )
