@@ -3,7 +3,6 @@ import Rating from "../../Components/Rating/Rating";
 import { getImgUrl } from "../../Utils/getImageURL";
 
 const ProductCart = ({product}) => {
-    console.log(product);
     return (
         <div>
             <div className='bg-[#FFFFFF] '>
