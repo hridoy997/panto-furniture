@@ -1,4 +1,5 @@
-import React from 'react';
+import { products } from '../../Utils/Products';
+import ProductCart from './ProductCart';
 
 const Products = ({ headLine }) => {
 
@@ -19,15 +20,12 @@ const Products = ({ headLine }) => {
                     </div>
                 </div>
                 {/* products grid */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-                    {/* product card */}
-                    <div className='bg-[#EEEEEE] rounded-lg p-4'>
-                        <img src="https://via.placeholder.com/300x200" alt="Product" className='w-full h-48 object-cover rounded-lg mb-4' />
-                        <h3 className='text-lg font-semibold mb-2'>Product Name</h3>
-                        <p className='text-gray-600 mb-2'>$99.99</p>
-                        <button className='bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors'>Add to Cart</button>
-                    </div>
-                    {/* Repeat product card as needed */}
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16'>
+                    {
+                        products.map((product, index) => (
+                            <ProductCart key={index} product={product} />
+                        ))
+                    }
                 </div>
             </div>
         </div>
