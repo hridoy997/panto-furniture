@@ -17,3 +17,8 @@
 .swiper-button-next::after {
     @apply text-lg font-semibold;
 } */
+
+
+.dark {
+    @apply bg-gray-900 text-white;
+}

@@ -14,11 +14,11 @@ const Materials = () => {
             </div>
             <div className="md:w-1/2 grid grid-cols-2 md:grid-cols-3 md:items-end  items-center">
                 <div>
-                    <img src={Material1} className='' alt="Material 1" srcset="" />
-                    <img src={Material2} className='' alt="Material 2" srcset="" />
+                    <img src={Material1} className='' alt="Material 1" />
+                    <img src={Material2} className='' alt="Material 2" />
                 </div>
                 <div className='md:col-span-2 col-span-1'>
-                    <img src={Material3} className='w-full md:h-[541px]' alt="Material 3" srcset="" />
+                    <img src={Material3} className='w-full md:h-[541px]' alt="Material 3" />
                 </div>
             </div>
         </section>

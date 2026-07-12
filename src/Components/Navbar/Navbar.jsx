@@ -50,7 +50,7 @@ const Navbar = () => {
 
     return (
         // <header className="bg-white shadow-md py-4 px-8">
-        <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out ${isScrolled ? "bg-white shadow-md" : "bg-transparent text-white"}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out ${isScrolled ? "bg-white shadow-md dark:text-black" : "bg-transparent text-white"}`}>
             <nav className="section-container flex items-center justify-between">
                 {/* logo */}
                 <Link to="/">
