@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider } from "react-router-dom";
 import { router } from './Routes/Route';
 import './index.css'
-// import 'sweetalert2/src/sweetalert2.scss'
 import 'sweetalert2/dist/sweetalert2.min.css'
 
 
