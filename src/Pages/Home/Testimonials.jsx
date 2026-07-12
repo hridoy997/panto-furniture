@@ -45,7 +45,7 @@ const Testimonials = () => {
                         slidesPerView: 3,
                         spaceBetween: 20,
                     },
-                }}
+                }} 
                 modules={[Pagination, Navigation, Autoplay]}
                 className="md:max-w-7xl mx-auto relative rounded"
             >
