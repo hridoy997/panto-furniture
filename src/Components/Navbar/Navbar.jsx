@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaBagShopping, FaBars } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
 
 const navItems = [
     { label: "Furniture", path: "/" },
@@ -28,6 +29,8 @@ const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const { countCartItems } = useContext(CartContext);
 
     const toggleMenu = () => {
         setIsMenuOpen(prevState => !prevState);
@@ -81,7 +84,7 @@ const Navbar = () => {
                 <div className="hidden md:block cursor-pointer relative">
                     <FaBagShopping />
                     <sub className="absolute top-0 -right-3 bg-primary text-white h-5 w-5 rounded-full text-xs flex items-center justify-center">
-                        0
+                        {countCartItems}
                     </sub>
                 </div>
             </nav>

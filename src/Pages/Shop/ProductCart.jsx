@@ -1,8 +1,13 @@
 import { FiPlus } from "react-icons/fi";
 import Rating from "../../Components/Rating/Rating";
 import { getImgUrl } from "../../Utils/getImageURL";
+import { CartContext } from "../../Context/CartContext";
+import { useContext } from "react";
 
-const ProductCart = ({product}) => {
+const ProductCart = ({ product }) => {
+
+    const { addToCart } = useContext(CartContext);
+
     return (
         <div>
             <div className='bg-[#FFFFFF] '>
@@ -17,7 +22,10 @@ const ProductCart = ({product}) => {
                         <sup>$</sup>
                         {product.price.toFixed(2)}
                     </p>
-                    <button className="bg-secondary text-white p-2 rounded-full hover:bg-black/65">
+                    <button 
+                        className="bg-secondary text-white p-2 rounded-full hover:bg-black/65"
+                        onClick={() => addToCart(product)}
+                    >
                         <FiPlus />
                     </button>
                 </div>
