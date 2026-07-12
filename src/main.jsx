@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from "react-router-dom";
-import { router } from './Routes/Route';
+import { router } from './Routes/Route.jsx';
 import './index.css'
 import 'sweetalert2/dist/sweetalert2.min.css'
 
