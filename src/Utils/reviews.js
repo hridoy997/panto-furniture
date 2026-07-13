@@ -1,9 +1,9 @@
-import reviewer1 from '../Assets/reviewer1.png';
-import reviewer2 from '../Assets/reviewer2.png';
-import reviewer3 from '../Assets/reviewer3.png';
-import testimonialBG1 from '../Assets/testimonial1.png';
-import testimonialBG2 from '../Assets/testimonial2.png';
-import testimonialBG3 from '../Assets/testimonial3.png';
+import reviewer1 from '../assets/reviewer1.png';
+import reviewer2 from '../assets/reviewer2.png';
+import reviewer3 from '../assets/reviewer3.png';
+import testimonialBG1 from '../assets/testimonial1.png';
+import testimonialBG2 from '../assets/testimonial2.png';
+import testimonialBG3 from '../assets/testimonial3.png';
 
 export const reviews = [
         {
