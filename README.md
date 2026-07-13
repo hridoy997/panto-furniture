@@ -2,6 +2,8 @@
 
 Panto is a responsive React + Vite landing/shop demo for a furniture store. It uses Tailwind CSS for styling, React Router for navigation, and a small client-side cart/context to demonstrate basic interactions (add-to-cart, theme toggle, category filters).
 
+**Live demo:** https://panto-furniture-4d75d3.netlify.app/
+
 ## Features
 
 - Responsive landing and shop pages with category filters and product cards
